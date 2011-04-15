@@ -52,7 +52,7 @@ class Newsletter_Widget extends WP_Widget {
                 // complete form. This will be embedded into the existing form.
                 echo 'Title<br /><input id="'.$this->get_field_id('title').'" name="'.$this->get_field_name('title').'" type="text" value="'.$title.'" />';
                 echo '<br /><br />';
-                echo 'Introduction<br /><textarea style="width: 350px;" id="'.$this->get_field_id('text').'" name="'.$this->get_field_name('text').'">'.$text.'</textarea>';
+                echo 'Introduction<br /><textarea id="'.$this->get_field_id('text').'" name="'.$this->get_field_name('text').'">'.$text.'</textarea>';
                 if (newsletter_has_extras('1.0.2')) {
                         echo 'Form number<br /><input id="'.$this->get_field_id('form').'" name="'.$this->get_field_name('form').'" type="text" value="'.$form.'" />';
                 }
