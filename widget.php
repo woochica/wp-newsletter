@@ -14,7 +14,7 @@ class Newsletter_Widget extends WP_Widget {
                 extract($args);
 
                 // Each widget can store its own options. We keep strings here.
-                $title = apply_filters('widget_title', $instance['title']);
+                $title = apply_filters('widget_title', $instance['title'], $instance, $this->id_base);
                 $text = $instance['text'];
                 $form = $instance['form'];
 
