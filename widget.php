@@ -50,12 +50,22 @@ class Newsletter_Widget extends WP_Widget {
                 $form = esc_attr($instance['form']);
                 // Here is our little form segment. Notice that we don't need a
                 // complete form. This will be embedded into the existing form.
-                echo 'Title<br /><input id="'.$this->get_field_id('title').'" name="'.$this->get_field_name('title').'" type="text" value="'.$title.'" />';
-                echo '<br /><br />';
-                echo 'Introduction<br /><textarea id="'.$this->get_field_id('text').'" name="'.$this->get_field_name('text').'">'.$text.'</textarea>';
-                if (newsletter_has_extras('1.0.2')) {
-                        echo 'Form number<br /><input id="'.$this->get_field_id('form').'" name="'.$this->get_field_name('form').'" type="text" value="'.$form.'" />';
-                }
+                ?>
+                <p>
+                  <label for="<?php echo $this->get_field_id('title'); ?>">Title</label><br />
+                  <input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+                </p>
+                <p>
+                  <label for="<?php echo $this->get_field_id('text'); ?>">Introduction</label><br />
+                  <textarea id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+                </p>
+                <?php if (newsletter_has_extras('1.0.2')): ?>
+                  <p>
+                    <label for="<?php echo $this->get_field_id('form'); ?>">Form number</label><br />
+                    <input id="<?php echo $this->get_field_id('form'); ?>" name="<?php echo $this->get_field_name('form'); ?>" type="text" value="<?php echo $form; ?>" />
+                  </p>
+                <?php endif; ?>
+                <?php
 	}
 
 	function update($new_instance, $old_instance) {
