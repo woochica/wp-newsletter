@@ -2,7 +2,7 @@
 
 class Newsletter_Widget extends WP_Widget {
 	function Newsletter_Widget() {
-                parent::WP_Widget(false, $name = 'Newsletter');
+                $this->WP_Widget('newsletter', $name = 'Newsletter');
 	}
 
 	function widget($args, $instance) {
